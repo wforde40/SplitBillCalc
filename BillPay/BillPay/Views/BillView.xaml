@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:skiasharp="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="BillPay.Views.BillView">
+  <ContentView.Content>
+
+        <yummy:PancakeView
+            HasShadow="True"
+            CornerRadius="10">
+
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <skiasharp:SKCanvasView 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    PaintSurface="SKCanvasView_PaintSurface"/>
+
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackLayout
+                            Grid.Column="0"
+                            Orientation="Vertical"
+                            Margin="15,15,0,15"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="FillAndExpand">
+
+                        <Label 
+                                TextColor="White"
+                                FontSize="26"
+                                FontFamily="Roboto-Bold.ttf#Roboto-Bold"
+                                HorizontalTextAlignment="Start">
+                            TOTAL
+                        </Label>
+
+                        <Label 
+                                x:Name="TotalAmountLabel"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Start"
+                                FontFamily="Roboto-Bold.ttf#Roboto-Bold" 
+                                FontSize="28"
+                                TextColor="White">
+                        </Label>
+
+                    </StackLayout>
+
+                    <Grid
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Margin="0,15,15,15">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            TextColor="White"
+                            FontSize="17"
+                            HorizontalTextAlignment="Start">
+                            Bill
+                        </Label>
+
+                        <Label
+                            x:Name="BillAmountLabel"
+                            Grid.Column="1"
+                            Grid.Row="0" 
+                            TextColor="White"
+                            FontSize="17"
+                             HorizontalTextAlignment="End">
+                        </Label>
+
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1" 
+                            TextColor="White"
+                            FontSize="17"
+                             HorizontalTextAlignment="Start">
+                            Friends
+                        </Label>
+
+                        <Label
+                            x:Name="FriendLabel"
+                            Grid.Column="1"
+                            Grid.Row="1" 
+                            TextColor="White"
+                            FontSize="17"
+                             HorizontalTextAlignment="End">
+                        </Label>
+
+                        <Label
+                            x:Name="TipsLabel"
+                            Grid.Column="0"
+                            Grid.Row="2" 
+                            TextColor="White"
+                            FontSize="17"
+                            HorizontalTextAlignment="Start">
+                            Tips(10%)
+                        </Label>
+
+                        <Label
+                            x:Name="TipAmountLabel"
+                            Grid.Column="1"
+                            Grid.Row="2"   
+                            TextColor="White"
+                            FontSize="17"
+                            HorizontalTextAlignment="End">
+                        </Label>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+
+        </yummy:PancakeView>
+
+
+
+    </ContentView.Content>
+</ContentView>

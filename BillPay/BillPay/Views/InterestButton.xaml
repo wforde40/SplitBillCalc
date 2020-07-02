@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             x:Class="BillPay.Views.InterestButton">
+  <ContentView.Content>
+
+
+        <RelativeLayout
+            HorizontalOptions="FillAndExpand">
+            
+            <skia:SKCanvasView 
+                x:Name="SkiaCanvas"
+                RelativeLayout.HeightConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Height}"
+                RelativeLayout.WidthConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Width}"
+                PaintSurface="SKCanvasView_PaintSurface"/>
+            
+            
+            <yummy:PancakeView  
+                RelativeLayout.HeightConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Height}"
+                RelativeLayout.WidthConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Width}"
+                BorderColor="#B3B4B8"
+                BorderThickness="1.5"
+                HorizontalOptions="FillAndExpand">
+
+                <Label 
+                    x:Name="TipLabel"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#B3B4B8"/>
+
+
+            </yummy:PancakeView>
+            
+        </RelativeLayout>
+      
+  </ContentView.Content>
+</ContentView>

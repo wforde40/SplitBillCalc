@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:icons="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="BillPay.Views.PeopleCountSlider">
+
+    <ContentView.Resources>
+        <x:String x:Key="Users">&#xf0c0;</x:String>
+    </ContentView.Resources>
+    
+  <ContentView.Content>
+
+
+        <RelativeLayout>
+
+            <skia:SKCanvasView 
+                x:Name="SliderCanvas"
+                RelativeLayout.WidthConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Height}"
+                PaintSurface="SKCanvasView_PaintSurface"/>
+
+            <StackLayout 
+                Orientation="Horizontal"
+                RelativeLayout.WidthConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Height}">
+
+                <icons:SvgCachedImage WidthRequest="100" HeightRequest="100" Source="resource://BillPay.Icons.users.svg"/>
+
+                <Label 
+                    x:Name="CountLabel"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="EndAndExpand" 
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    FontSize="Title"
+                    Margin="0,0,20,0">
+                    0
+                </Label>
+
+            </StackLayout>
+
+
+            <yummy:PancakeView
+                x:Name="SliderBuffer"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToView, ElementName=NumberSlider, Factor=1, Property=Y,Constant=-5}"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression Type=RelativeToView, ElementName=NumberSlider, Factor=1, Property=X,Constant=-50}"
+                RelativeLayout.WidthConstraint=
+                    "{ConstraintExpression Type=RelativeToView, ElementName=NumberSlider, Factor=10, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                    "{ConstraintExpression Type=RelativeToView, ElementName=NumberSlider, Factor=1.2, Property=Height}">
+
+                <yummy:PancakeView.GestureRecognizers>
+                        <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
+                </yummy:PancakeView.GestureRecognizers>
+
+            </yummy:PancakeView>
+
+            <BoxView 
+                x:Name="NumberSlider"
+                InputTransparent="True"
+                BackgroundColor="#0EBA46"
+                RelativeLayout.YConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=-10}"
+                RelativeLayout.WidthConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=.03, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                    "{ConstraintExpression Type=RelativeToParent, Factor=1.4, Property=Height}">
+
+            </BoxView>
+
+
+
+
+
+        </RelativeLayout>
+      
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BillPay;assembly=BillPay"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             
+             x:Class="BillPay.Views.NumberKeys">
+  <ContentView.Content>
+        <Grid
+            x:Name="Keys"
+            Padding="50,0,50,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <yummy:PancakeView
+                Grid.Row="0"
+                Grid.Column="0">
+                <Label
+                    Text="1"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+                
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+                
+            </yummy:PancakeView>
+
+
+            <yummy:PancakeView
+                Grid.Row="0"
+                Grid.Column="1">
+                <Label 
+                    Text="2"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+                
+            </yummy:PancakeView>
+
+            <yummy:PancakeView
+                Grid.Row="0"
+                Grid.Column="2">
+                <Label 
+                    Text="3"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+                
+            </yummy:PancakeView>
+
+            <yummy:PancakeView
+                Grid.Row="1"
+                Grid.Column="0">
+                <Label 
+                    Text="4"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView   
+                Grid.Row="1"
+                Grid.Column="1">
+                <Label 
+                    Text="5"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+
+
+            <yummy:PancakeView
+                Grid.Row="1"
+                Grid.Column="2">
+                <Label 
+                    Text="6"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                   
+                </Label>
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+          
+            <yummy:PancakeView
+                Grid.Row="2"
+                Grid.Column="1">
+
+                <Label
+                    Text="7"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+                
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+
+            </yummy:PancakeView>
+
+            <yummy:PancakeView
+                Grid.Row="2"
+                Grid.Column="0">
+                <Label 
+                    Text="8"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView
+                Grid.Row="2"
+                Grid.Column="2">
+                <Label 
+                    Text="9"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+                
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+                
+            </yummy:PancakeView>
+
+
+            <yummy:PancakeView
+                Grid.Row="3"
+                Grid.Column="1" >
+                <Label 
+                    Text="0"
+                    TextColor="Black"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView
+                  Grid.Row="3"
+                Grid.Column="0">
+                <Image 
+                    Scale="2.5"
+                    Margin="4,0,0,0"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Source="{local:ImageResource BillPay.Icons.Plus.png}">
+                </Image>
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Plus"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+
+            <yummy:PancakeView
+                Grid.Row="3"
+                Grid.Column="2">
+                <Image 
+                    Scale="2.5"
+                    Margin="0,0,10,0"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Source="{local:ImageResource BillPay.Icons.Delete.png}">
+                </Image>
+
+                <!--<skia:SKCanvasView
+
+                    PaintSurface="SKCanvasView_PaintDragButton">
+
+                </skia:SKCanvasView>-->
+
+                <yummy:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Delete"/>
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
+
+
+
+            
+            
+            
+        </Grid>
+
+
+    </ContentView.Content>
+</ContentView>

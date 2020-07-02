@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:views="clr-namespace:BillPay.Views"
+             xmlns:converters="clr-namespace:BillPay.Converters"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             x:Class="BillPay.MainPage"
+             x:Name="x_main"
+             BackgroundColor="#F5F7F9">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="PrimaryFont">"Roboto-Bold.ttf#Roboto-Bold"</x:String>
+            <converters:IntToString x:Key="intToString" />
+            <converters:InterestButtonToString x:Key="interstButtonToString" />
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    
+    <Grid
+        x:Name="MainGrid"
+        Margin="20"
+        RowSpacing="30"
+        BackgroundColor="#F5F7F9">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+
+        <views:BillSplitView
+            x:Name="BillSplit"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.RowSpan="3"
+            Opacity="0"
+            Margin="0,-35,0,0"
+            Padding="15,0"
+            Total="{Binding 
+                Source={Reference MainHeader}, 
+                Path=TotalBill}"
+            Split="{Binding 
+                Source={Reference PeopleCountSlider}, 
+                Path=Count}">
+        </views:BillSplitView>
+        
+        <yummy:PancakeView
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="#F5F7F9"
+            Margin="0,0,0,-30">
+
+            <Label
+                x:Name="Title"
+                Text="Split Bill" 
+                FontSize= "Body"
+                TextColor="Black"
+                FontFamily="Roboto-Bold.ttf#Roboto-Bold"/>
+
+        </yummy:PancakeView>
+
+
+
+
+        <views:BillView
+            x:Name="MainHeader"
+            Grid.Row="1"
+            Grid.Column="0"
+            BillAmount="$0.00"
+            TipAmount="{Binding 
+                Source={x:Reference TipSelector}, 
+                Path=Selected, 
+                Converter={StaticResource interstButtonToString}}"
+            PeopleCount="{Binding 
+                Source={x:Reference PeopleCountSlider}, 
+                Path=Count, 
+                Converter={StaticResource intToString}}">
+        </views:BillView>
+
+
+        
+        
+        <views:PeopleCountSlider
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="PeopleCountSlider"
+            Opacity="1">
+        </views:PeopleCountSlider>
+        
+        <views:InterestSelector
+            x:Name="TipSelector"
+            Grid.Row="3"
+            Grid.Column="0"
+            Opacity="1">
+        </views:InterestSelector>
+        
+        <views:NumberKeys
+            x:Name="Keypad"
+            Grid.Row="4"
+            Grid.Column="0"
+            Opacity="1"
+            BackgroundColor="#F5F7F9"
+            SendInput="{Binding
+                Source={Reference MainHeader},
+                Path=RecieveInput}"
+            DeleteAction="{Binding
+                Source={Reference MainHeader},
+                Path=DeleteAction}">
+            
+        </views:NumberKeys>
+
+        <yummy:PancakeView
+            Grid.Row="5"
+            Grid.Column="0"
+            BackgroundColor="#00BA40"
+            HasShadow="True"
+            CornerRadius="5">
+
+            <yummy:PancakeView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+            </yummy:PancakeView.GestureRecognizers>
+
+            <Label
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="#E3F9E7" 
+                FontSize="Title">SPLIT BILL</Label>
+            
+            
+        </yummy:PancakeView>
+        
+       
+    </Grid>
+
+</ContentPage>

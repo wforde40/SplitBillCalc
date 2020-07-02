@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:local="clr-namespace:BillPay.Views"
+             mc:Ignorable="d"
+             x:Class="BillPay.Views.InterestSelector"
+             x:Name="x_this">
+
+    <ContentView.Content>
+
+        <!--<CollectionView
+            x:Name="TipCollection"
+             ItemsLayout="HorizontalList"
+             ItemsSource="{Binding Source={Reference x_this}, Path=Tips}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:InterestButton
+                        HorizontalOptions="FillAndExpand"
+                        Amount="{Binding Amount}"
+                        Selected="{Binding Selected}">
+                    </local:InterestButton>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>-->
+        
+        
+        <StackLayout
+           Orientation="Horizontal" >
+
+            <local:InterestButton
+                HorizontalOptions="FillAndExpand"
+                Amount="0%"
+                Selected="False">
+                <local:InterestButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </local:InterestButton.GestureRecognizers>
+            </local:InterestButton>
+
+            <local:InterestButton
+                x:Name="TenPercent"
+                HorizontalOptions="FillAndExpand"
+                Amount="10%"
+                Selected="True">
+                <local:InterestButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </local:InterestButton.GestureRecognizers>
+            </local:InterestButton>
+            
+            <local:InterestButton
+                HorizontalOptions="FillAndExpand"
+                Amount="20%"
+                Selected="False">
+                <local:InterestButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </local:InterestButton.GestureRecognizers>
+            </local:InterestButton>
+
+            <local:InterestButton
+                HorizontalOptions="FillAndExpand"
+                Amount="30%"
+                Selected="False">
+                <local:InterestButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </local:InterestButton.GestureRecognizers>
+            </local:InterestButton>
+
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
